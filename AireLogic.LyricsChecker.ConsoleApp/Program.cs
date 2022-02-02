@@ -27,8 +27,8 @@ namespace AireLogic.LyricsChecker.ConsoleApp
                 Console.WriteLine("Input artist name: ");
                 _searchArtist = Console.ReadLine();
             }
-            Guid artistGuid = await _musicDataSource.GetArtistAsync(_searchArtist);
-            if (artistGuid == null)
+            string artistGuid = await _musicDataSource.GetArtistAsync(_searchArtist);
+            if (String.IsNullOrEmpty(artistGuid))
             {
                 Console.WriteLine("No artist found.");
                 return;

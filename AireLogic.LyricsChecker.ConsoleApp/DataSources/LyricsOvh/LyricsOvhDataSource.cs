@@ -14,10 +14,7 @@ namespace AireLogic.LyricsChecker.ConsoleApp.DataSources.LyricsOvh
         private JsonSerializerOptions _jsonSerializerOption;
         public LyricsOvhDataSource(LyricsOvhSettings settings = null)
         {
-            if (settings == null)
-            {
-                _rootUrl = Constants.Settings.LyricsOvh.DEFAULT_ROOR_URL;
-            }
+            _rootUrl = settings !=null ? settings.RootUrl : Constants.Settings.LyricsOvh.DEFAULT_ROOR_URL;
             _jsonSerializerOption = new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true

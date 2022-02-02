@@ -9,13 +9,12 @@ namespace AireLogic.LyricsChecker.ConsoleApp.UnitTests
         [TestCase("--artist=coldplay")]
         [TestCase("--artist=Meat Loaf")]
         [Parallelizable]
-        public async Task GivenArtist_WhenQueryRecords_GetWorkCount(string arguement)
+        public void GivenArtist_WhenQueryRecords_GetWorkCount(string arguement)
         {
             Assert.DoesNotThrowAsync( async () => {
                 string[] args = { arguement };
                 await Program.Main(args);
             });
-            Task.CompletedTask.Wait();
         }
     }
 }
