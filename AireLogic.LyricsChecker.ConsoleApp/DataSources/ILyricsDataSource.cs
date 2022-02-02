@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Threading.Tasks;
 
 namespace AireLogic.LyricsChecker.ConsoleApp.DataSources
 {
     internal interface ILyricsDataSource
     {
+        Task<string> GetLyricsAsync(string artice, string title);
     }
 }
