@@ -1,16 +1,21 @@
 using NUnit.Framework;
+using System.Threading.Tasks;
 
 namespace AireLogic.LyricsChecker.ConsoleApp.UnitTests
 {
     public class ProgramTests
     {
         [Test]
-        public void Test1()
+        [TestCase("--artist=coldplay")]
+        [TestCase("--artist=Meat Loaf")]
+        [Parallelizable]
+        public async Task GivenArtist_WhenQueryRecords_GetWorkCount(string arguement)
         {
-            Assert.DoesNotThrow(() => {
-                Program.Main(null);
+            Assert.DoesNotThrowAsync( async () => {
+                string[] args = { arguement };
+                await Program.Main(args);
             });
-            Assert.Pass();
+            Task.CompletedTask.Wait();
         }
     }
 }

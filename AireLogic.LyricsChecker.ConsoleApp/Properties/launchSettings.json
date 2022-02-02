@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "AireLogic.LyricsChecker.ConsoleApp": {
+      "commandName": "Project",
+      "commandLineArgs": "--artist=\"meat loaf\""
+    }
+  }
+}
